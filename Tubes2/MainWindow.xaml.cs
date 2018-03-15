@@ -42,12 +42,14 @@ namespace Tubes2
             //bind the graph to the viewer 
             viewer.Graph = graph;
             //associate the viewer with the form 
+            form.Width = 600;
+            form.Height = 600;
             form.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             form.Controls.Add(viewer);
             form.ResumeLayout();
             //show the form 
-            form.ShowDialog();
+            form.Show();
         }
     }
     public class Parser
@@ -110,8 +112,6 @@ namespace Tubes2
             catch (Exception e)
             {
                 // Let the user know what went wrong.
-                //Console.WriteLine("The file could not be read:");
-                //Console.WriteLine(e.Message);
                 MessageBox.Show($"The file could not be read: {e.Message}");
                 return null;
             }
