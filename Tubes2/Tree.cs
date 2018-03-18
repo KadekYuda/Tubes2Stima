@@ -24,7 +24,7 @@ namespace Tubes2
                 foreach(String dependency in graphdetail[i].Skip(1))
                 {
                     int j = graphdetail.FindIndex(x => (x[0] == dependency));
-                    dependency_matrix[j][i] = 1;
+                    dependency_matrix[j][i] = true;
                 }
             }
 
@@ -47,7 +47,7 @@ namespace Tubes2
                 foreach (String dependency in graphdetail[i].Skip(1))
                 {
                     int j = graphdetail.FindIndex(x => (x[0] == dependency));
-                    dependency_matrix[i][j] = 1;
+                    dependency_matrix[i][j] = true;
                 }
             }
 
