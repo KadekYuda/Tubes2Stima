@@ -60,4 +60,58 @@ namespace Tubes2
             return ordered_graph;
         }
     }
+
+    class DFSSorter {
+        public static List<int> Timestamp;
+        public static int currentSemester = 0;
+        public static List<int> Semester;
+        public static int timer = 1;
+
+        public static void init_topoSort(List<List<String>> graphdetail)
+        {
+            currentSemester++;
+            List<List<bool>> dMat = Tree.createDependentMatrix(graphdetail);
+
+            Timestamp = new List<int>(new int[dMat.Count]);
+            Semester = new List<int>(new int[dMat.Count]);
+
+            for (int i = 0; i < dMat.Count; i++)
+            {
+                if (!dMat[i].Contains(true))
+                {
+                    Timestamp[i] = timer;
+                    Semester[i] = currentSemester;
+                    timer++;        
+                    topoSortDFS(Tree.createDependencyMatrix(graphdetail), i);
+                }
+            }
+        }
+
+        public static void topoSortDFS(List<List<bool>> dMat, int i){
+            ++currentSemester;
+
+            // Tidak ada mata kuliah yang membutuhkan mata kuliah i lagi
+            if (!dMat[i].Contains(true)){
+                Timestamp[i] = timer;
+                timer++;
+                currentSemester--;
+            }
+
+            else {
+                for (int j = 0; j < dMat[i].Count; j++){
+                    if (dMat[i][j] && Timestamp[j] == 0){
+                        dMat[i][j] = false;
+                        Semester[j] = currentSemester;
+                        Timestamp[j] = timer;
+                        timer++;
+                        topoSortDFS(dMat, j);
+                    }
+                }
+                Timestamp[i] = timer;
+                timer++;
+                currentSemester--;
+            }
+        }
+
+    }
 }
