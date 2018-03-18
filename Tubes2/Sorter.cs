@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,11 @@ namespace Tubes2
 
             Queue<String> ordered_graph = new Queue<String>();
 
-            while(dependent_matrix.Exists(x => x.Contains(true)))
+            while(ordered_graph.Count != dependent_matrix.Count)
             {
                 for(int i = 0; i < dependent_matrix.Count; i++)
                 {
-                    if(!dependent_matrix[i].Contains(true))
+                    if (!(dependent_matrix[i].Contains(true)) && !ordered_graph.Contains(graphdetail[i][0]))
                     {
                         ordered_graph.Enqueue(graphdetail[i][0]);
                         for(int j = 0; j < dependent_matrix.Count; j++)
