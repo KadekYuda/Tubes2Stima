@@ -35,7 +35,7 @@ namespace Tubes2
         {
             List<List<bool>> dependency_matrix = new List<List<bool>>();
 
-            //Initialize matrix with 
+            //Initialize matrix as all false
             for (int i = 0; i < graphdetail.Count; i++)
             {
                 dependency_matrix.Add(new List<bool>(new bool[graphdetail.Count]));
