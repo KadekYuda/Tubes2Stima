@@ -19,3 +19,25 @@ D:\Bahan Kuliah\Informatika\Semester 4\IF2211 - Strategi Algoritma\Tugas Besar 2
 D:\Bahan Kuliah\Informatika\Semester 4\IF2211 - Strategi Algoritma\Tugas Besar 2\Tubes2\Tubes2\bin\Debug\Microsoft.Msagl.xml
 D:\Bahan Kuliah\Informatika\Semester 4\IF2211 - Strategi Algoritma\Tugas Besar 2\Tubes2\Tubes2\bin\Debug\Microsoft.Msagl.Drawing.xml
 D:\Bahan Kuliah\Informatika\Semester 4\IF2211 - Strategi Algoritma\Tugas Besar 2\Tubes2\Tubes2\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Tubes2.exe.config
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Tubes2.exe
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Tubes2.pdb
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.dll
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.Drawing.dll
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.xml
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.Drawing.xml
+C:\ITB\Stima\toposort\Tubes2\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.csprojResolveAssemblyReference.cache
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\MainWindow.g.cs
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\App.g.cs
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2_MarkupCompile.cache
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2_MarkupCompile.lref
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\MainWindow.baml
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.g.resources
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.Properties.Resources.resources
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.csproj.GenerateResource.cache
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.csproj.CoreCompileInputs.cache
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.csproj.CopyComplete
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.exe
+C:\ITB\Stima\toposort\Tubes2\obj\Debug\Tubes2.pdb

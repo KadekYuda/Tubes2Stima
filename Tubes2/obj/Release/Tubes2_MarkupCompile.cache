@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\ITB\Stima\toposort\Tubes2\obj\Debug\
+C:\ITB\Stima\toposort\Tubes2\obj\Release\
 Tubes2
 none
 false
-DEBUG;TRACE
+TRACE
 C:\ITB\Stima\toposort\Tubes2\App.xaml
 11151548125
 
-11984402665
+7190348992
 172101355872
 MainWindow.xaml;
 
-False
+True
 

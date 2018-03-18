@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -128,6 +129,14 @@ namespace Tubes2
         {
             Parser p = new Parser();
             List<List<string>> graphdetails = p.Parse(this.FileField.Text);
+            Queue<Tuple<String,int>> test = BFSSorter.topoSortBFS(graphdetails);
+            while(test.Count != 0)
+            {
+                Tuple<String, int> temp = test.Dequeue();
+                Debug.Write(temp.Item1);
+                Debug.Write(' ');
+                Debug.WriteLine(temp.Item2);
+            }
             if (graphdetails != null)
             {
                 string output = "";
