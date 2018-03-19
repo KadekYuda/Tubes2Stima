@@ -63,16 +63,37 @@ namespace Tubes2
 
     class DFSSorter {
         public static List<int> Timestamp;
-        public static int currentSemester = 0;
+        public static List<int> Timestamp_Start;
+        public static int currentSemester = 1;
         public static List<int> Semester;
         public static int timer = 1;
 
+        public static void sort_semester(){
+            int max = -1;
+            int idxMax = -1;
+            List<int> TS = new List<int>(Timestamp);
+            while (currentSemester <= TS.Count){
+                max = -1;
+                for (int i = 0; i < TS.Count; i++){                
+                    if (TS[i] > max){
+                        max = TS[i];
+                        idxMax = i;
+                    }
+                }
+
+                Semester[idxMax] = currentSemester;
+                currentSemester++;
+                TS[idxMax] = -1;
+                Debug.WriteLine("MASUK SINI LHO");
+            }
+        }
+
         public static void init_topoSort(List<List<String>> graphdetail)
         {
-            currentSemester++;
             List<List<bool>> dMat = Tree.createDependentMatrix(graphdetail);
 
             Timestamp = new List<int>(new int[dMat.Count]);
+            Timestamp_Start = new List<int>(new int[dMat.Count]);
             Semester = new List<int>(new int[dMat.Count]);
 
             for (int i = 0; i < dMat.Count; i++)
@@ -80,7 +101,8 @@ namespace Tubes2
                 if (!dMat[i].Contains(true))
                 {
                     Timestamp[i] = timer;
-                    Semester[i] = currentSemester;
+                    Timestamp_Start[i] = timer;
+                    // Semester[i] = currentSemester;
                     timer++;        
                     topoSortDFS(Tree.createDependencyMatrix(graphdetail), i);
                 }
@@ -88,20 +110,21 @@ namespace Tubes2
         }
 
         public static void topoSortDFS(List<List<bool>> dMat, int i){
-            ++currentSemester;
+            // ++currentSemester;
 
             // Tidak ada mata kuliah yang membutuhkan mata kuliah i lagi
             if (!dMat[i].Contains(true)){
                 Timestamp[i] = timer;
                 timer++;
-                currentSemester--;
+                // currentSemester--;
             }
 
             else {
                 for (int j = 0; j < dMat[i].Count; j++){
                     if (dMat[i][j] && Timestamp[j] == 0){
                         dMat[i][j] = false;
-                        Semester[j] = currentSemester;
+                        // Semester[j] = currentSemester;
+                        Timestamp_Start[j] = timer;
                         Timestamp[j] = timer;
                         timer++;
                         topoSortDFS(dMat, j);
@@ -109,7 +132,7 @@ namespace Tubes2
                 }
                 Timestamp[i] = timer;
                 timer++;
-                currentSemester--;
+                // currentSemester--;
             }
         }
 

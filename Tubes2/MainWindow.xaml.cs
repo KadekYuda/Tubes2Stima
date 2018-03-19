@@ -130,14 +130,26 @@ namespace Tubes2
             Parser p = new Parser();
             List<List<string>> graphdetails = p.Parse(this.FileField.Text);
             Queue<Tuple<String,int>> test = BFSSorter.topoSortBFS(graphdetails);
+            
             DFSSorter.init_topoSort(graphdetails);
+            DFSSorter.sort_semester();
+            // Sortir semester 
 
-            while(test.Count != 0)
-            {
-                Tuple<String, int> temp = test.Dequeue();
-                Debug.Write(temp.Item1);
-                Debug.Write(' ');
-                Debug.WriteLine(temp.Item2);
+
+
+            // while(test.Count != 0)
+            // {
+            //     Tuple<String, int> temp = test.Dequeue();
+            //     Debug.Write(temp.Item1);
+            //     Debug.Write(' ');
+            //     Debug.WriteLine(temp.Item2);
+            // }
+
+            for(int i = 0; i < DFSSorter.Timestamp.Count; i++){
+                Debug.WriteLine("Matkul C" + (i+1));
+                Debug.WriteLine("Semester : " + DFSSorter.Semester[i]);
+                Debug.WriteLine("Start : " + DFSSorter.Timestamp_Start[i]);
+                Debug.WriteLine("End : " + DFSSorter.Timestamp[i]);
             }
 
             if (graphdetails != null)
