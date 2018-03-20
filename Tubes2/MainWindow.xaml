@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tubes2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Penyusunan Mata Kuliah dengan BFS dan DFS"
+        WindowState="Maximized">
 
     <Border Padding="10">
         <StackPanel Orientation="Vertical">
@@ -23,10 +24,28 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Margin ="0 0 5 0" Padding ="0 2" Grid.Column ="0" Content="Reset" x:Name="ResetBtn" Click="reset_btn"/>
-                <Button Margin ="5 0 0 0" Padding ="0 2" Grid.Column ="1" Content="Apply" x:Name="ApplyBtn" Click="apply_btn"/>
+                <Button Margin ="0 0 5 0" Padding ="0 2" Grid.Column ="0" Content="BFS" x:Name="BFSBtn" Click="bfs_btn"/>
+                <Button Margin ="5 0 0 0" Padding ="0 2" Grid.Column ="1" Content="DFS" x:Name="DFSBtn" Click="dfs_btn"/>
             </Grid>
-            <TextBlock x:Name="GraphInfo" Margin="0 20 0 0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0 10 5 0">
+                    <TextBlock Text="Graph details" Grid.Column="0" />
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <TextBlock x:Name="GraphInfo" Grid.Column ="0" Padding ="2" Margin="0 0 5 0" ScrollViewer.CanContentScroll="True"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5 10 0 0">
+                    <TextBlock Text="Result" Margin ="5 0 0 0" Grid.Column="1" />
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <TextBlock x:Name="GraphResult" Margin ="5 0 0 0" Grid.Column ="1" Padding ="2" ScrollViewer.CanContentScroll="True"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </Border>
 </Window>
+
